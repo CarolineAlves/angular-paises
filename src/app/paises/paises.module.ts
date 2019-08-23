@@ -7,4 +7,4 @@ import { PaisComponent } from './pais/pais.component';
     exports: [ PaisComponent ],
     imports: [ HttpClientModule ]
 })
-export class PhotosModule {}
+export class PaisesModule {}

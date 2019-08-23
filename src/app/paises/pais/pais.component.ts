@@ -6,7 +6,5 @@ import { Component,  Input } from '@angular/core';
   styleUrls: ['./pais.component.scss']
 })
 export class PaisComponent  {
-  @Input() name ='';
-    
-  @Input() flag ='';
+  @Input() lists;  
 }

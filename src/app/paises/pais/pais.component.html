@@ -1,3 +1,11 @@
-<div class="card" style="width: 18rem;" *ngFor="let pais of paises" >
-    <img class="card-img-top" [src]="pais.flag" [alt]="pais.nome">
+<div class="container-fluid paises" *ngFor="let list of lists">
+    <div class="card  mb-3" style="width: 18rem;">
+    <img class="card-img-top" [src]="list.flag" [alt]="list.name">
+    <div class="card-body">
+        <h5 class="card-title">{{list.name}}</h5>
+        <p class="card-text">Região: {{list.region}}</p>
+        <p class="card-text">SubRegião: {{list.subregion}}</p>
+        <p class="card-text">População: {{list.population}}</p>
+    </div>
+    </div>
 </div>

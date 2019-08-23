@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaisService } from './paises/pais/pais.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,16 +8,17 @@ import { PaisService } from './paises/pais/pais.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
-  
-  paises: any[] = []; 
-  
+    
   constructor(private paisService: PaisService) { }
+    lists: any;
+    
+    ngOnInit(): void {
+      this.getPaises();
+    }
 
-  ngOnInit(): void {
-    this.paisService
-    .list()
-    .subscribe(paises => this.paises = paises);
-  }
-
-
+    getPaises(){
+      this.paisService.list().subscribe(response => {
+        this.lists = response;
+      });
+    }
 }
